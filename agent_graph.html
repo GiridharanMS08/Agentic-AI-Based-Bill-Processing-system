@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agentic Bill Analyzer - Agent Graph</title>
+
+    <script type="module">
+        import mermaid from
+        "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+
+        mermaid.initialize({
+            startOnLoad: true,
+            theme: "default",
+
+            flowchart: {
+                curve: "linear",
+                useMaxWidth: true,
+                htmlLabels: true
+            }
+        });
+    </script>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 30px;
+
+            font-family: Arial, sans-serif;
+
+            background: #f5f5f5;
+        }
+
+        h1 {
+            margin-bottom: 25px;
+        }
+
+        .graph-container {
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 2px 10px rgba(0, 0, 0, 0.1);
+
+            overflow: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1>Agentic Bill Analyzer - LangGraph Workflow</h1>
+
+<div class="graph-container">
+
+<div class="mermaid">
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([&lt;p&gt;__start__&lt;/p&gt;]):::first
+	ocr(ocr)
+	extract(extract)
+	llm_correct(llm_correct)
+	validate(validate)
+	llm_recheck(llm_recheck)
+	categorize(categorize)
+	store(store)
+	aggregate(aggregate)
+	reject(reject)
+	__end__([&lt;p&gt;__end__&lt;/p&gt;]):::last
+	__start__ --&gt; ocr;
+	categorize --&gt; store;
+	extract --&gt; llm_correct;
+	llm_correct --&gt; validate;
+	llm_recheck --&gt; validate;
+	ocr --&gt; extract;
+	store --&gt; aggregate;
+	validate -.-&gt; categorize;
+	validate -. &amp;nbsp;recheck&amp;nbsp; .-&gt; llm_recheck;
+	validate -.-&gt; reject;
+	aggregate --&gt; __end__;
+	reject --&gt; __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
+
+</div>
+
+</div>
+
+</body>
+</html>

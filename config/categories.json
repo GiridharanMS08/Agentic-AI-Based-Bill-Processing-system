@@ -1,0 +1,46 @@
+{
+  "Food": [
+    "restaurant",
+    "cafe",
+    "coffee",
+    "food",
+    "bakery",
+    "pizza",
+    "burger",
+    "dominos",
+    "swiggy",
+    "zomato",
+    "hotel",
+    "tea",
+    "chai",
+    "bhavan"
+  ],
+  "Medical": [
+    "medical",
+    "pharmacy",
+    "hospital",
+    "clinic",
+    "diagnostic",
+    "lab",
+    "medicine",
+    "medicines",
+    "apollo",
+    "netmeds",
+    "doctor"
+  ],
+  "Travel": [
+    "uber",
+    "ola",
+    "cab",
+    "taxi",
+    "flight",
+    "airlines",
+    "railway",
+    "irctc",
+    "metro",
+    "bus",
+    "travel",
+    "makemytrip"
+  ],
+  "Other": []
+}

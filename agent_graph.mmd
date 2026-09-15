@@ -1,0 +1,32 @@
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	ocr(ocr)
+	extract(extract)
+	llm_correct(llm_correct)
+	validate(validate)
+	llm_recheck(llm_recheck)
+	categorize(categorize)
+	store(store)
+	aggregate(aggregate)
+	reject(reject)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> ocr;
+	categorize --> store;
+	extract --> llm_correct;
+	llm_correct --> validate;
+	llm_recheck --> validate;
+	ocr --> extract;
+	store --> aggregate;
+	validate -.-> categorize;
+	validate -. &nbsp;recheck&nbsp; .-> llm_recheck;
+	validate -.-> reject;
+	aggregate --> __end__;
+	reject --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc

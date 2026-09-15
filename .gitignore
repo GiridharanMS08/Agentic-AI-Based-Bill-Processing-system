@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+.pytest_cache/
+*.pyc
+config/db_config.env
+output/*
+!output/.gitkeep

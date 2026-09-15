@@ -1,0 +1,2 @@
+USE bill_analyzer;
+INSERT INTO categories(name,keywords,is_active) VALUES ('Food',JSON_ARRAY('restaurant','cafe','coffee','food','bakery','pizza','burger','dominos','swiggy','zomato','hotel','tea','chai'),1),('Medical',JSON_ARRAY('medical','pharmacy','hospital','clinic','diagnostic','lab','medicine','medicines','apollo','netmeds','doctor'),1),('Travel',JSON_ARRAY('uber','ola','cab','taxi','flight','airlines','railway','irctc','metro','bus','travel','makemytrip'),1),('Other',JSON_ARRAY(),1) ON DUPLICATE KEY UPDATE keywords=VALUES(keywords),is_active=VALUES(is_active);

@@ -1,4 +1,4 @@
-# Agentic AI Bill Processor — Browser + MySQL
+# Agentic AI Bill Processor
 
 A local-first multi-agent bill processing application for students. Upload multiple **JPG/JPEG/PNG bill photos** in a browser. RapidOCR runs locally, Gemini corrects the preliminary extraction, validation and categorization follow, then MySQL stores the bill and Python refreshes weekly/monthly/category summaries.
 
